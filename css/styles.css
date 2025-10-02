@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root {
+	--color-primary: #264653;
+	--color-secondary: #2A9D8F;
+	--color-tertiary: #E76F51;
+	--gap-general: 40px;
+}
+
 body {
 	font-family: "Rubik", sans-serif;
 	font-optical-sizing: auto;
@@ -7,14 +14,82 @@ body {
 
 nav {
 	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	display: flex;
-	padding: 33px 79px;
+	align-items: center;
+	justify-content: space-around;
+}
+
+@media screen and (max-width: 900px) {
+	nav {
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+
+nav img {
+	max-width: 250px;
+}
+
+ul.menu {
+	list-style: none;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: var(--gap-general);
+}
+
+ul.menu a {
+	font-size: 24px;
+	text-decoration: none;
+	color: #000;
+}
+
+ul.menu a:hover {
+	text-decoration: underline;
+	color: var(--color-tertiary);
+}
+
+.btn {
+	background: var(--color-primary);
+	padding: 10px 16px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: var(--color-tertiary);
+}
+
+header {
+	background: #000;
+	height: 80vh;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-ul {
-	list-style: none;
+header h1 {
+	color: #fff;
 	margin: 0;
-	display: flex;
+	font-size: 100px;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: center;
 }
+
+@media screen and (max-width: 900px) {
+	header h1 {
+		font-size: 80px;
+	}
+}
+
+
+
+
+
