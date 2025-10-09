@@ -7,6 +7,10 @@
 	--gap-general: 40px;
 }
 
+img {
+	max-width: 100%;
+}
+
 body {
 	font-family: "Rubik", sans-serif;
 	font-optical-sizing: auto;
@@ -67,11 +71,20 @@ ul.menu a:hover {
 }
 
 header {
-	background: #000;
+	position: relative;
+	background: url("../images/hero-background.jpg") center center no-repeat #000;
+	background-size: cover;
 	height: 80vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+header video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
 }
 
 header h1 {
@@ -81,12 +94,78 @@ header h1 {
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
+	z-index: 1;
 }
 
 @media screen and (max-width: 900px) {
-	header h1 {
-		font-size: 80px;
+	header {
+		height: 30rem;
 	}
+
+	header h1 {
+		font-size: 60px;
+	}
+}
+
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+footer a {
+
+}
+
+.footer-logo {
+	width: 250px;
+}
+
+
+
+.featured-products {
+	display: flex;
+	padding: 3rem 1rem;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+	.featured-products {
+		flex-direction: column;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		gap: 2rem;
+	}
+}
+
+
+
+.product-card {
+	width: 100%;
+	border-radius: 20px;
+	background: url("../images/hero-background.jpg") center center no-repeat #000;
+	background-size: cover;
+	padding: 20px;
+	padding-top: 9rem;
+}
+
+.product-card-text {
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.7);
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.product-card-text h4 {
+	margin: 0;
 }
 
 
