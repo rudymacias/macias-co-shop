@@ -20,7 +20,7 @@
 		</nav>
 
 		<header>
-			<h1>Family Proud Merch</h1>
+			<h1 id="split">Family Proud Merch</h1>
 		</header>
 
 		<section class="featured-products">
@@ -63,6 +63,44 @@
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+		<script>
+			document.fonts.ready.then(() => {
+			    var split = SplitText.create("#split", {
+			            type: "chars"
+			        }),
+			        tl = gsap.timeline({ repeat: 30 });
+			
+			    gsap.set("#split", { opacity: 1 });
+			    tl.from(split.chars, {
+			        duration: 1,
+			        y: 100,
+			        rotation: 90,
+			        opacity: 0,
+			        ease: "elastic",
+			        stagger: 0.03
+			    });
+			
+			    //exploding text...
+			    tl.to(
+			        split.chars,
+			        {
+			            duration: 2.5,
+			            opacity: 0,
+			            rotation: "random(-2000, 2000)",
+			            physics2D: () => ({
+			                angle: "random(240, 320)",
+			                velocity: "random(300, 600)",
+			                gravity: 800
+			            }),
+			            stagger: 0.015
+			        },
+			        3
+			    );
+			});
+		</script>
 
 	</body>
 
