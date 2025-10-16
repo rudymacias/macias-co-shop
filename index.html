@@ -83,23 +83,6 @@
 			        ease: "elastic",
 			        stagger: 0.03
 			    });
-			
-			    //exploding text...
-			    tl.to(
-			        split.chars,
-			        {
-			            duration: 2.5,
-			            opacity: 0,
-			            rotation: "random(-2000, 2000)",
-			            physics2D: () => ({
-			                angle: "random(240, 320)",
-			                velocity: "random(300, 600)",
-			                gravity: 800
-			            }),
-			            stagger: 0.015
-			        },
-			        3
-			    );
 			});
 		</script>
 
