@@ -72,7 +72,7 @@
 			    var split = SplitText.create("#split", {
 			            type: "chars"
 			        }),
-			        tl = gsap.timeline({ repeat: 30 });
+			        tl = gsap.timeline();
 			
 			    gsap.set("#split", { opacity: 1 });
 			    tl.from(split.chars, {
